@@ -1,0 +1,23 @@
+.basket_product {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px; 
+    padding: 20px;
+    max-width: calc(100% - 300px);
+    max-height: 400px;
+    min-width: 100px; 
+    background-color: white;
+    z-index: 1;
+}
+.basket_img {
+    height: 180px;
+    width: 180px;
+    object-fit: contain;
+}
+.basket_info{
+    padding-left: 20px;
+}
+.basket_title{
+    font-size: 17px;
+    font-weight: 800;
+}
