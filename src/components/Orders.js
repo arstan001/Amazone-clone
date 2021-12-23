@@ -28,13 +28,12 @@ const Orders = () => {
         }
     }, [user])
 
-
     return (
         <div className='orders'>
             <h1>Your Orders</h1>
             <div className='orders_order'>
                 {orders?.map(order => (
-                    <Order order={order} />
+                    <Order key={order.id} order={order} />
                 ))}
             </div>
         </div>

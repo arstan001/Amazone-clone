@@ -38,6 +38,10 @@
 .payment_title {
     flex:0.2;
 }
+.payment_tip{
+    font-size: 10px;
+    color:var(--darkGray);
+}
 .payment_address, .payment_items, .payment_details {
     flex:0.8;
 }

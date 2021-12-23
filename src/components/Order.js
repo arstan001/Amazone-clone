@@ -19,7 +19,7 @@ const Order = ({ order }) => {
                     price={item.price}
                     rating={item.rating}
                     image={item.image}
-                    hide />)}
+                    hide={true} />)}
             <CurrencyFormat
                 renderText={(value) => (
                     <h3 className='order_total'>Order total: {value}</h3>

@@ -17,14 +17,14 @@ const Payment = () => {
     const [succeeded, setSucceeded] = useState(false);
     const [processing, setProcessing] = useState(false);
     const [clientSecret, setClientSecret] = useState(true);
-
     useEffect(() => {
         const getClientSecret = async () => {
-            const response = await axios.post(`${process.env.REACT_APP_FIREBASE_API}payments/create?total=${getBasketTotal(basket) * 100}`);
+            const response = await axios.post(`${process.env.REACT_APP_FIREBASE_API}/payments/create?total=${getBasketTotal(basket) * 100}`);
             setClientSecret(response.data.clientSecret);
         }
         getClientSecret();
     }, [basket])
+    console.log(clientSecret, 'secrets')
     const stripe = useStripe();
     const elements = useElements();
 
@@ -85,12 +85,14 @@ const Payment = () => {
                                 title={item.title}
                                 price={item.price}
                                 rating={item.rating}
-                                image={item.image} />)}
+                                image={item.image}
+                                hide />)}
                     </div>
                 </div>
                 <div className='payment_section'>
                     <div className='payment_title'>
                         <h3>Payment method</h3>
+                        <p className='payment_tip'>to test input 4242424242424242</p>
                     </div>
                     <div className='payment_details'>
                         <form onSubmit={handleSubmit}>
